@@ -1,12 +1,15 @@
 package pucrs.fds;
+
 //deborast.almeida@gmail.com
 import java.util.ArrayList;
 
 public class Bar {
+
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
-	
+	ArrayList<String> listaSociocomMilhas = new ArrayList<>();
+
 	public Bar() {
-		
+
 	}
 
 	public int qtdSocios() {
@@ -21,8 +24,7 @@ public class Bar {
 
 		return cont;
 	}
-	
-	
+
 	public int naoSocios() {
 		return totalClientes() - qtdSocios();
 	}
@@ -36,8 +38,8 @@ public class Bar {
 			}
 
 		}
-		
-		return (cont * 100)/ totalClientes();
+
+		return (cont * 100) / totalClientes();
 	}
 
 	public double qtdMulheres() {
@@ -50,28 +52,68 @@ public class Bar {
 
 		}
 
-		return  (cont * 100)/ totalClientes();
+		return (cont * 100) / totalClientes();
 	}
 
 	public int totalClientes() {
 		return listaClientes.size();
 	}
-	
+
 	public void entrada(Cliente cliente) {
-		 listaClientes.add(cliente);
+		listaClientes.add(cliente);
 	}
-	
+
 	public Cliente saida(String cpf) {
 		Cliente aux = null;
-		
+
 		for (Cliente cliente : listaClientes) {
-			if(cpf.equals(cliente.getCpf()))
+			if (cpf.equals(cliente.getCpf()))
 				listaClientes.remove(cliente);
-				aux = cliente;
+			aux = cliente;
 		}
 		return aux;
 	}
-	
-	
+
+	public Cliente getClienteCpf(String cpf) {
+		for (Cliente cliente : listaClientes) {
+			if (cliente.getCpf().equals(cpf)) {
+				return cliente;
+			} else {
+				System.out.println("Cliente não está no bar");
+				return null;
+			}
+		}
+		System.out.println("Cliente não está no bar");
+		return null;
+	}
+
+	public void inserirMilhas(String cpf, int milha) {
+
+		for (Cliente cliente : listaClientes) {
+			if (cliente.getCpf().equals(cpf) & cliente.getSocio() == true) {
+				cliente.setPontosMilhagens(milha);
+				listaSociocomMilhas.add(cliente.getNumeroSocio());
+
+			} else {
+				System.out.println("Cliente ainda não é sócio ou Cpf informado está incorreto!!!");
+			}
+		}
+	}
+
+	public String clientNoBar() {
+		String msn = "";
+		for (Cliente cliente : listaClientes) {
+			msn = msn + cliente.getNome() + "\n";
+		}
+
+		return msn;
+	}
+
+	public boolean cpfEstaNoBar(String cpf) {
+		if (getClienteCpf(cpf) != null) {
+			return true;
+		}
+		return false;
+	}
 
 }

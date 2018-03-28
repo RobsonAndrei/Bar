@@ -2,24 +2,15 @@ package pucrs.fds;
 
 public class Cliente {
 	private String nome, cpf, numSocio;
-	private int idade;
+	private int idade, pontosMilhagens;
 	private char genero;
 	private boolean socio;
+	
 	
 	public Cliente(String nome, String cpf, int idade, char genero, boolean socio) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
-		this.idade = idade;
-		this.genero = genero;
-		this.socio = socio;
-	}
-	
-	public Cliente(String nome, String cpf, String numSocio, int idade, char genero, boolean socio) {
-		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		this.numSocio = numSocio;
 		this.idade = idade;
 		this.genero = genero;
 		this.socio = socio;
@@ -53,8 +44,34 @@ public class Cliente {
 	public boolean getSocio() {
 		return socio;
 	}
+	
+	public void setNumeroSocio(String numero) {
+		this.numSocio = numero;
+	}
+	
+	public String getNumeroSocio() {
+		return this.numSocio;
+	}
 
 	public void setSocio(boolean socio) {
 		this.socio = socio;
 	}
+
+	public void setNumSocio(String numSocio) {
+		this.numSocio = numSocio;
+	}
+
+	public void setPontosMilhagens(int pontosMilhagens) {
+		this.pontosMilhagens = pontosMilhagens;
+	}
+
+	public String getNumSocio() {
+		return numSocio;
+	}
+
+	public int getPontosMilhagens() {
+		return pontosMilhagens;
+	}
+	
+	
 }
