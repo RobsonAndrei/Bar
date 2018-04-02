@@ -5,8 +5,7 @@ public class Cliente {
 	private int idade, pontosMilhagens;
 	private char genero;
 	private boolean socio;
-	
-	
+
 	public Cliente(String nome, String cpf, int idade, char genero, boolean socio) {
 		super();
 		this.nome = nome;
@@ -19,24 +18,31 @@ public class Cliente {
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getCpf() {
 		return cpf;
 	}
+
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
 	public int getIdade() {
 		return idade;
 	}
+
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
+
 	public char getGenero() {
 		return genero;
 	}
+
 	public void setGenero(char genero) {
 		this.genero = genero;
 	}
@@ -44,11 +50,11 @@ public class Cliente {
 	public boolean getSocio() {
 		return socio;
 	}
-	
+
 	public void setNumeroSocio(String numero) {
 		this.numSocio = numero;
 	}
-	
+
 	public String getNumeroSocio() {
 		return this.numSocio;
 	}
@@ -65,13 +71,8 @@ public class Cliente {
 		this.pontosMilhagens = pontosMilhagens;
 	}
 
-	public String getNumSocio() {
-		return numSocio;
-	}
-
 	public int getPontosMilhagens() {
 		return pontosMilhagens;
 	}
-	
-	
+
 }

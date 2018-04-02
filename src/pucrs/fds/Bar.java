@@ -75,27 +75,32 @@ public class Bar {
 	}
 
 	public Cliente getClienteCpf(String cpf) {
+		Cliente aux = null;
 		for (Cliente cliente : listaClientes) {
 			if (cliente.getCpf().equals(cpf)) {
-				return cliente;
-			} else {
-				System.out.println("Cliente não está no bar");
-				return null;
+				aux = cliente;
 			}
 		}
-		System.out.println("Cliente não está no bar");
-		return null;
+		if (aux == null) {
+			System.out.println("Cliente não está no bar!!!");
+		}
+		return aux;
+
 	}
 
 	public void inserirMilhas(String cpf, int milha) {
-
+		Cliente aux = null;
 		for (Cliente cliente : listaClientes) {
 			if (cliente.getCpf().equals(cpf) & cliente.getSocio() == true) {
 				cliente.setPontosMilhagens(milha);
 				listaSociocomMilhas.add(cliente.getNumeroSocio());
+				aux = cliente;
 
 			} else {
-				System.out.println("Cliente ainda não é sócio ou Cpf informado está incorreto!!!");
+				if (aux == null) {
+					System.out.println("Cliente ainda não é sócio ou Cpf informado está incorreto!!!");
+				}
+
 			}
 		}
 	}
