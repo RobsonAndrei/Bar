@@ -129,6 +129,11 @@ class BarTeste {
 		boolean res = b.cpfEstaNoBar(cliente2.getCpf());
 		assertEquals(true, res);
 	}
+	 @Test
+	 public void ClientegetPontos() {
+		 int aux = cliente3.getPontosMilhagens();
+		 assertEquals(100, aux);
+	 }
 
 	@AfterEach
 	void tearDown() {
