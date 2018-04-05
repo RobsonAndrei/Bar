@@ -1,4 +1,4 @@
-package pucrs.fds;
+package business;
 
 public class Cliente {
 	private String nome, cpf, numSocio;
