@@ -2,6 +2,7 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.IOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.ArrayList;
 
@@ -97,11 +98,9 @@ class BarTeste {
 		b.entrada(cliente3);
 		String msn = "";
 		msn = b.clientNoBar();
-		assertEquals("Maria\n" + 
-				"Pedro\n" + 
-				"Jerônimo\n", msn);
+		assertEquals("Maria\n" + "Pedro\n" + "Jerônimo\n", msn);
 	}
-	
+
 	@Test
 	public void getClientepCPF() {
 		b.entrada(cliente1);
@@ -110,7 +109,7 @@ class BarTeste {
 		Cliente c = b.getClienteCpf(cliente2.getCpf());
 		assertEquals(cliente2, c);
 	}
-	
+
 	@Test
 	public void inserirMilhas() {
 		b.entrada(cliente1);
@@ -120,7 +119,7 @@ class BarTeste {
 		int milhas = b.getClienteCpf(cliente1.getCpf()).getPontosMilhagens();
 		assertEquals(200, milhas);
 	}
-	
+
 	@Test
 	public void cpfNobar() {
 		b.entrada(cliente1);
@@ -129,11 +128,22 @@ class BarTeste {
 		boolean res = b.cpfEstaNoBar(cliente2.getCpf());
 		assertEquals(true, res);
 	}
-	 @Test
-	 public void ClientegetPontos() {
-		 int aux = cliente3.getPontosMilhagens();
-		 assertEquals(100, aux);
-	 }
+
+	@Test
+	public void ClientegetPontos() {
+		int aux = cliente3.getPontosMilhagens();
+		assertEquals(100, aux);
+	}
+
+	@Test
+	public void gravar() throws IOException {
+		b.entrada(cliente1);
+		b.entrada(cliente2);
+		b.entrada(cliente3);
+		b.salvarNofinaldoDia();
+		
+		
+	}
 
 	@AfterEach
 	void tearDown() {

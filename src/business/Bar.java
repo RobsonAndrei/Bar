@@ -1,9 +1,17 @@
 package business;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 //deborast.almeida@gmail.com
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Bar {
+
+	private static final String path = "Dados.txt";
 
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
 	ArrayList<String> listaSociocomMilhas = new ArrayList<>();
@@ -119,6 +127,27 @@ public class Bar {
 			return true;
 		}
 		return false;
+	}
+
+	public void salvarNofinaldoDia() throws IOException {
+		File file = new File(path);
+		long begin = System.currentTimeMillis();
+		BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+		writer.write("Arquivo gravado em : " + new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").format(new Date()));
+		writer.newLine();
+		writer.write("Caminho da gravação: " + path);
+		writer.newLine();
+		long end = System.currentTimeMillis();
+		writer.write("Tempo de gravação: " + (end - begin) + "ms.");
+
+		for (Cliente cliente : listaClientes) {
+			writer.write("\nNome: " + cliente.getNome() + " Cpf:" + cliente.getCpf() + " Genero: " + cliente.getGenero() + " Idade: "+ cliente.getIdade() + " Socio: "+ cliente.getSocio() + " Pontos de Milhas: " + cliente.getPontosMilhagens());
+		}
+
+		writer.flush();
+		// Fechando conexão e escrita do arquivo.
+		writer.close();
+		System.out.println("Arquivo gravado em: " + path);
 	}
 
 }
