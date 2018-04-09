@@ -15,6 +15,7 @@ public class Bar {
 
 	ArrayList<Cliente> listaClientes = new ArrayList<>();
 	ArrayList<String> listaSociocomMilhas = new ArrayList<>();
+	ArrayList<Cliente> listaTotalClientes = new ArrayList<>();
 
 	public Bar() {
 
@@ -69,6 +70,7 @@ public class Bar {
 
 	public void entrada(Cliente cliente) {
 		listaClientes.add(cliente);
+		listaTotalClientes.add(cliente);
 	}
 
 	public Cliente saida(String cpf) {
@@ -140,7 +142,7 @@ public class Bar {
 		long end = System.currentTimeMillis();
 		writer.write("Tempo de gravação: " + (end - begin) + "ms.");
 
-		for (Cliente cliente : listaClientes) {
+		for (Cliente cliente : listaTotalClientes) {
 			writer.write("\nNome: " + cliente.getNome() + " Cpf:" + cliente.getCpf() + " Genero: " + cliente.getGenero() + " Idade: "+ cliente.getIdade() + " Socio: "+ cliente.getSocio() + " Pontos de Milhas: " + cliente.getPontosMilhagens());
 		}
 
