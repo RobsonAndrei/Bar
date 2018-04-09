@@ -1,0 +1,6 @@
+Arquivo gravado em : 05/04/2018 10:02:39
+Caminho da gravação: Dados.txt
+Tempo de gravação: 43ms.
+Nome: Maria Cpf:0987896654 Genero: F Idade: 78 Socio: true Pontos de Milhas: 0
+Nome: Pedro Cpf:3987234651 Genero: M Idade: 22 Socio: false Pontos de Milhas: 0
+Nome: Jerônimo Cpf:1922896654 Genero: M Idade: 51 Socio: true Pontos de Milhas: 0
