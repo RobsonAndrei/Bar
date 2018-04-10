@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import pucrs.fds.Bar;
 import pucrs.fds.Client;
 
-class BarTeste 
+class BarTest
 {
 	Bar bar;
 	Client client1, client2, client3;
