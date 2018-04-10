@@ -9,7 +9,7 @@ public class Bar
 	public Bar() 
 	{	}
 
-	public int qtdSocios() 
+	public int membersQuantity() 
 	{
 		int count = 0;
 
@@ -24,12 +24,12 @@ public class Bar
 		return count;
 	}
 	
-	public int naoSocios() 
+	public int nonMembers() 
 	{
-		return totalClientes() - qtdSocios();
+		return clientsTotal() - membersQuantity();
 	}
 
-	public double qtdHomems() 
+	public double menQuantity() 
 	{
 		int count = 0;
 
@@ -41,10 +41,10 @@ public class Bar
 			}
 		}
 		
-		return (count * 100)/ totalClientes();
+		return (count * 100)/ clientsTotal();
 	}
 
-	public double qtdMulheres() 
+	public double womenQuantity() 
 	{
 		int count = 0;
 
@@ -56,10 +56,10 @@ public class Bar
 			}
 		}
 
-		return  (count * 100)/ totalClientes();
+		return  (count * 100)/ clientsTotal();
 	}
 
-	public int totalClientes() 
+	public int clientsTotal() 
 	{
 		return clientsList.size();
 	}
