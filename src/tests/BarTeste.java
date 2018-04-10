@@ -48,7 +48,8 @@ class BarTeste {
 	}
 
 	@Test
-	public void testepercentHomem() {
+	public void testepercentHomem() 
+	{
 		b.entrada(cliente1);
 		b.entrada(cliente2);
 		b.entrada(cliente3);
