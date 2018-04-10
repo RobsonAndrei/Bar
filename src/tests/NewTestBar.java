@@ -29,7 +29,7 @@ class BarTeste
 	@Test
 	public void entryTest() 
 	{
-		int total = bar.totalClientes();
+		int total = bar.clientsTotal();
 		
 		bar.entry(client1);
 		bar.entry(client2);
@@ -41,7 +41,7 @@ class BarTeste
 	@Test
 	public void exitTest() 
 	{
-		int total = bar.totalClientes();
+		int total = bar.clientsTotal();
 		
 		bar.entry(client1);
 		bar.entry(client2);
@@ -55,7 +55,7 @@ class BarTeste
 	@Test
 	public void menPercentTest() 
 	{
-		double mPercent = bar.qtdHomems();
+		double mPercent = bar.menQuantity();
 		
 		bar.entry(client1);
 		bar.entry(client2);
@@ -67,7 +67,7 @@ class BarTeste
 	@Test
 	public void womenPercentTest() 
 	{
-		double wPercent = bar.qtdMulheres();
+		double wPercent = bar.womenQuantity();
 
 		bar.entry(client1);
 		bar.entry(client2);
@@ -79,7 +79,7 @@ class BarTeste
 	@Test
 	public void membersTotalTest() 
 	{
-		int total = bar.qtdSocios();
+		int total = bar.membersQuantity();
 		
 		bar.entry(client1);
 		bar.entry(client2);
@@ -91,7 +91,7 @@ class BarTeste
 	@Test
 	public void nonMembersTotalTest() 
 	{
-		int total = bar.naoSocios();
+		int total = bar.nonMembers();
 		
 		bar.entry(client1);
 		bar.entry(client2);
