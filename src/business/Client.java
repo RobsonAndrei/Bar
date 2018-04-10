@@ -2,7 +2,7 @@ package pucrs.fds;
 
 public class Client 
 {
-	private String name, cpf, memberNumber; //
+	private String name, cpf, memberNumber;
 	private int age;
 	private char genre;
 	private boolean isMember;
