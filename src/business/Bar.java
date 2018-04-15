@@ -77,9 +77,11 @@ public class Bar {
 		Cliente aux = null;
 
 		for (Cliente cliente : listaClientes) {
-			if (cpf.equals(cliente.getCpf()))
+			if (cpf.equals(cliente.getCpf())) {
+				aux = cliente;
 				listaClientes.remove(cliente);
-			aux = cliente;
+			}
+
 		}
 		return aux;
 	}
@@ -143,7 +145,9 @@ public class Bar {
 		writer.write("Tempo de gravação: " + (end - begin) + "ms.");
 
 		for (Cliente cliente : listaTotalClientes) {
-			writer.write("\nNome: " + cliente.getNome() + " Cpf:" + cliente.getCpf() + " Genero: " + cliente.getGenero() + " Idade: "+ cliente.getIdade() + " Socio: "+ cliente.getSocio() + " Pontos de Milhas: " + cliente.getPontosMilhagens());
+			writer.write("\nNome: " + cliente.getNome() + " Cpf:" + cliente.getCpf() + " Genero: " + cliente.getGenero()
+					+ " Idade: " + cliente.getIdade() + " Socio: " + cliente.getSocio() + " Pontos de Milhas: "
+					+ cliente.getPontosMilhagens());
 		}
 
 		writer.flush();
