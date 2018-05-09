@@ -98,7 +98,7 @@ public class Interface {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		// icon = new ImageIcon(url);
+		 //icon = new ImageIcon(url);
 		
 		
 		
